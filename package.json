@@ -1,0 +1,32 @@
+{
+  "name": "subscribe_bot",
+  "version": "1.0.0",
+  "description": "FB subscription chatbots",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgriley/subscribe_bot.git"
+  },
+  "keywords": [
+    "mmm",
+    "good",
+    "yum"
+  ],
+  "author": "Kenny Chen, Will Glisson, Yuan Kong, and Matthew Riley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mgriley/subscribe_bot/issues"
+  },
+  "homepage": "https://github.com/mgriley/subscribe_bot#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "crypto": "0.0.3",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.21",
+    "request": "^2.79.0",
+    "underscore": "^1.8.3"
+  }
+}
