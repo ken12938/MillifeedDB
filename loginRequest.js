@@ -1,9 +1,23 @@
-$(document).ready(function () {
-	$('form').submit(function (event) {
-		var arr = $(this).serializeArray();
+var HttpClient = function () {
+	this.get = function (url, input, callback) {
+		var anHttpRequest = new XMLHttpRequest();
+		anHttpRequest.onreadystatechange = function () {
+			if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200) {
+				callback(anHttpRequest.responseText);
+			}
+		}
 
-		$.get("http://fizznow.com:8083/data", {name: arr[0], password: arr[1]}, function (data) {
-			alert('Got the data: ' + data);
-		});
-	});
-});
+		anHttpRequest.open('GET', url, true);
+		anHttpRequest.send(input);
+	}
+}
+
+var elem = document.getElementById('target');
+elem.addEventListener('submit', function (input) {
+	console.log('Reached here');
+	var client = new HttpClient();
+	client.get('https://www.google.com/', input, function (data) {
+		document.getElementById('channeldisplay').textContent = 'Channel Name: ' + input.username;
+		//document.getElementById('numusers').textContent = 'Number of users: ' + data.numUsers;
+	})
+}, false);
